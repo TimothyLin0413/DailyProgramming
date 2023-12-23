@@ -71,4 +71,18 @@ class ProgrammingLibrary {
         visited[row][col] = false;
         return false;
     }
+
+    // 12/22/23
+    // remove all occurrences of val in nums and return length of modified array
+    public int removeElement(int[] nums, int val) {
+        // using two indexes, one is for modified index and one is looping
+        int i = 0;
+        for (int j = 0; j < nums.length; ++j){
+            if (nums[j] != val){
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
+    }
 }
