@@ -13,3 +13,18 @@
  *     }
  * }
  */
+
+class TreeLibrary {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        // Base case, when both have null at the end node
+        if (p == null && q == null) {
+            return true;
+        }
+        // not equal; return false
+        if (p == null || q == null || p.val != q.val) {
+            return false;
+        }
+        // Recursively check if the left and right subtrees are identical
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+}
