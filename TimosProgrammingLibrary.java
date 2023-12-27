@@ -85,4 +85,13 @@ class ProgrammingLibrary {
         }
         return i;
     }
+
+    // 12/26/23
+    // find first occurence of subtring
+    public int strStr(String haystack, String needle) {
+        if (haystack.contains(needle)){
+            return haystack.indexOf(needle);
+        }
+        return -1;
+    }
 }
