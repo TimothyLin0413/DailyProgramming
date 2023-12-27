@@ -94,4 +94,12 @@ class ProgrammingLibrary {
         }
         return -1;
     }
+
+    // find length of last word 
+    public int lengthOfLastWord(String s) {
+        String trimString = s.trim();
+        int last_i = trimString.lastIndexOf(' ');
+        String last_word = trimString.substring(last_i + 1);
+        return last_word.length();
+    }
 }
