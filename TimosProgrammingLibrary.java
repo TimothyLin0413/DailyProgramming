@@ -102,4 +102,21 @@ class ProgrammingLibrary {
         String last_word = trimString.substring(last_i + 1);
         return last_word.length();
     }
+
+    // given an integer array, add one and return the new array
+    public int[] plusOne(int[] digits) {
+    // if cuurent last digit is not 9 simply, increment by 1 and return the array, if it is 9, set it to 0 and go to next digit and treat it as last digit until it return or if every digit is 9. 
+    for (int i = digits.length - 1; i >= 0; i--) {
+	    if (digits[i] < 9) {
+		    digits[i]++;
+		    return digits;
+	    }
+	    digits[i] = 0;
+    }       
+
+    // if every digit is 9, create an array with +1 sizze and put 1 in the first digit or index 0
+    digits = new int[digits.length + 1];
+    digits[0] = 1;
+    return digits;
+    }
 }
