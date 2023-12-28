@@ -119,4 +119,24 @@ class ProgrammingLibrary {
     digits[0] = 1;
     return digits;
     }
+
+    // 12/27/23
+    // merge intervals
+    public int[][] merge(int[][] intervals) {
+	// sort based on starting of each interval
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+        List<int[]> ans = new ArrayList<>();
+
+	// loop thorugh all intervals, if the start of interval is greater than the end interval of answer arrray,
+	// simply append that interval in the answer array else, take the maximum of end points from the interval and answer array and set it as the end point
+        for (int[] interval : intervals) {
+            if (ans.isEmpty() || interval[0] > ans.get(ans.size() - 1)[1]) {
+                ans.add(interval);
+            } else {
+                ans.get(ans.size() - 1)[1] = Math.max(interval[1], ans.get(ans.size() - 1)[1]);
+            }
+        }
+        
+        return ans.toArray(new int[ans.size()][]);
+    }
 }
